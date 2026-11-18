@@ -76,3 +76,11 @@ a:hover {
     color: #111111;
 }
 
+/* new style 3: red subheadings with a yellow line under them */
+h2 {
+    font-family: "Arial Black", Arial, sans-serif;
+    color: #E4002B;
+    max-width: 600px;
+    margin: 30px auto 10px auto;
+    border-bottom: 3px solid #FFD100;
+}
