@@ -1,32 +1,28 @@
 /* =====================================================================
-   styles.css  ·  YOUR BRAND
+   styles.css  ·  NASCAR BRAND
    ---------------------------------------------------------------------
-   This one file is your brand guide. Every page that links to it gets
+   This one file is my brand guide. Every page that links to it gets
    the same font, the same colors and the same spacing.
-   Change a color here once, and every page changes.
-
-   Use the same font and colors you picked for your Excel menu images,
-   so the menu and the pages look like one brand.
+   Font: Arial Black for headings, Arial for text
+   Colors: black #111111, yellow #FFD100, red #E4002B
    ===================================================================== */
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    background-color: #f4efe6;
-    color: #2b2b2b;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    color: #111111;
     margin: 0;
     padding: 0 20px 40px 20px;
 }
 
 /* the menu at the top of every page */
 nav {
-    background-color: #2b5d8c;
+    background-color: #111111;
     padding: 14px;
     text-align: center;
 }
 
-/* every image inside the menu is forced to the same height.
-   If your images still look different sizes, their WIDTHS are
-   different: go back to Excel and make every cell the same size. */
+/* every image inside the menu is forced to the same height. */
 nav img {
     height: 50px;
     margin: 4px;
@@ -39,7 +35,8 @@ nav a {
 }
 
 h1 {
-    color: #2b5d8c;
+    font-family: "Arial Black", Arial, sans-serif;
+    color: #111111;
     text-align: center;
     font-size: 40px;
 }
@@ -47,6 +44,13 @@ h1 {
 p {
     max-width: 600px;
     margin: 20px auto;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+ul {
+    max-width: 560px;
+    margin: 10px auto;
     font-size: 18px;
     line-height: 1.5;
 }
