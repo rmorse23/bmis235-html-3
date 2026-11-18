@@ -67,3 +67,12 @@ nav img {
     border-radius: 8px;
 }
 
+/* new style 2: red links that turn black when you hover */
+a {
+    color: #E4002B;
+}
+
+a:hover {
+    color: #111111;
+}
+
