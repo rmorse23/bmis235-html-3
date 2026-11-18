@@ -38,7 +38,137 @@
      This box is empty on purpose. In Part 7 you paste an interactive
      graphic BETWEEN the opening <div> and the closing </div> below.
      ===================================================================== -->
-<div class="showcase"></div>
+<div class="showcase">
+<!-- HTML: a picture of an oval track with one car for each series.
+     Clicking a car or a button shows facts about that series in the box below -->
+<div class="nt-wrap">
+  <svg class="nt-track" viewBox="0 0 600 300">
+    <rect x="0" y="0" width="600" height="300" rx="16" fill="#111111"/>
+    <path class="nt-asphalt" d="M 170 40 H 430 A 110 110 0 0 1 430 260 H 170 A 110 110 0 0 1 170 40 Z"/>
+    <path class="nt-line" d="M 170 40 H 430 A 110 110 0 0 1 430 260 H 170 A 110 110 0 0 1 170 40 Z"/>
+    <text x="300" y="140" class="nt-title">NASCAR</text>
+    <text x="300" y="172" class="nt-hint">Click a car</text>
+    <g class="nt-car" onclick="showSeries('cup')">
+      <rect x="213" y="31" width="34" height="18" rx="5" fill="#E4002B"/>
+      <text x="230" y="45">C</text>
+    </g>
+    <g class="nt-car" onclick="showSeries('oreilly')">
+      <rect x="283" y="31" width="34" height="18" rx="5" fill="#00843D"/>
+      <text x="300" y="45">O</text>
+    </g>
+    <g class="nt-car" onclick="showSeries('trucks')">
+      <rect x="352" y="29" width="36" height="22" rx="3" fill="#1E6FD9"/>
+      <text x="370" y="45">T</text>
+    </g>
+  </svg>
+  <div class="nt-buttons">
+    <button onclick="showSeries('cup')">Cup Series</button>
+    <button onclick="showSeries('oreilly')">O'Reilly</button>
+    <button onclick="showSeries('trucks')">Trucks</button>
+  </div>
+  <div class="nt-info">
+    <strong id="nt-name">Pick a series</strong>
+    <span id="nt-text">Click a car on the track or a button above to see facts about that series.</span>
+  </div>
+</div>
+
+<!-- CSS: colors and sizes for the track, cars, buttons and info box.
+     Every rule starts with .showcase so it only changes things inside this box -->
+<style>
+.showcase .nt-wrap {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 600px;
+  margin: 30px auto;
+  background: #111111;
+  border: 3px solid #FFD100;
+  border-radius: 12px;
+  padding: 10px;
+}
+.showcase .nt-track {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.showcase .nt-asphalt {
+  fill: #1f5f2e;
+  stroke: #444444;
+  stroke-width: 52;
+}
+.showcase .nt-line {
+  fill: none;
+  stroke: #FFD100;
+  stroke-width: 2;
+  stroke-dasharray: 10 10;
+}
+.showcase .nt-title {
+  fill: #FFD100;
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 34px;
+  text-anchor: middle;
+}
+.showcase .nt-hint {
+  fill: #ffffff;
+  font-size: 16px;
+  text-anchor: middle;
+}
+.showcase .nt-car {
+  cursor: pointer;
+}
+.showcase .nt-car text {
+  fill: #ffffff;
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 13px;
+  text-anchor: middle;
+}
+.showcase .nt-buttons {
+  text-align: center;
+  margin: 10px 0;
+}
+.showcase .nt-buttons button {
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 14px;
+  background: #FFD100;
+  color: #111111;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 4px;
+  cursor: pointer;
+}
+.showcase .nt-buttons button:hover {
+  background: #E4002B;
+  color: #ffffff;
+}
+.showcase .nt-info {
+  background: #ffffff;
+  color: #111111;
+  border-left: 6px solid #E4002B;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.showcase #nt-name {
+  display: block;
+  margin-bottom: 4px;
+}
+</style>
+
+<!-- JavaScript: the facts for each series, and a function that
+     puts the right facts in the info box when something is clicked -->
+<script>
+var facts = {
+  cup: ["NASCAR Cup Series", "The top level of NASCAR, racing since 1949. 36 points races, starting with the Daytona 500. Chevrolet, Ford and Toyota race the Next Gen car."],
+  oreilly: ["NASCAR O'Reilly Auto Parts Series", "The second level, racing since 1982. It used to be the Busch, Nationwide and Xfinity Series, and got the O'Reilly name in 2025."],
+  trucks: ["NASCAR Craftsman Truck Series", "The third level, racing since 1995. Drivers race full-size pickup trucks, and a lot of young drivers start here."]
+};
+
+function showSeries(series) {
+  document.getElementById("nt-name").textContent = facts[series][0];
+  document.getElementById("nt-text").textContent = facts[series][1];
+}
+</script>
+</div>
 
 <!-- Footer: fill in your name -->
 <footer>Built by Tre Morse &middot; BMIS 235</footer>
